@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>chosenEnvironment</key>
+	<string>dev</string>
+	<key>environments</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>dev-alphavantage</string>
+			<key>APIKey</key>
+			<string>15T06KQ802HISI5N</string>
+			<key>hostURLLogged</key>
+			<string>https://www.alphavantage.co/query?function=</string>
+			<key>hostURLUnlogged</key>
+			<string>https://www.alphavantage.co/query?function=</string>
+		</dict>
+	</array>
+</dict>
+</plist>

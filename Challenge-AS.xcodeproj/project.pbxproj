@@ -14,6 +14,9 @@
 		9139713C20B5BF4D00497E32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9139713A20B5BF4D00497E32 /* LaunchScreen.storyboard */; };
 		9139714720B5BF4D00497E32 /* Challenge_ASTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9139714620B5BF4D00497E32 /* Challenge_ASTests.swift */; };
 		9139715220B5BF4D00497E32 /* Challenge_ASUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9139715120B5BF4D00497E32 /* Challenge_ASUITests.swift */; };
+		9139716520B5C59E00497E32 /* APISettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9139716420B5C59E00497E32 /* APISettings.plist */; };
+		9139716720B5DCC500497E32 /* APISettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9139716620B5DCC500497E32 /* APISettings.swift */; };
+		9139716920B5DCF800497E32 /* APIEnvironments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9139716820B5DCF800497E32 /* APIEnvironments.swift */; };
 		9638021F685AA1150350615A /* Pods_Challenge_ASUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F12B4B36896308288D5AC3C /* Pods_Challenge_ASUITests.framework */; };
 		A33A0E4C310C8CAC859FD359 /* Pods_Challenge_AS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD9AB67E2FC1E80AD38731 /* Pods_Challenge_AS.framework */; };
 		FE8B293CF8C39E010029951F /* Pods_Challenge_ASTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47E3BC5EAE3D8581B4CA5FF6 /* Pods_Challenge_ASTests.framework */; };
@@ -57,6 +60,9 @@
 		9139714D20B5BF4D00497E32 /* Challenge-ASUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Challenge-ASUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9139715120B5BF4D00497E32 /* Challenge_ASUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge_ASUITests.swift; sourceTree = "<group>"; };
 		9139715320B5BF4D00497E32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9139716420B5C59E00497E32 /* APISettings.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APISettings.plist; sourceTree = "<group>"; };
+		9139716620B5DCC500497E32 /* APISettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISettings.swift; sourceTree = "<group>"; };
+		9139716820B5DCF800497E32 /* APIEnvironments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEnvironments.swift; sourceTree = "<group>"; };
 		996CB618E22B3DE1443C3DEA /* Pods-Challenge-ASTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challenge-ASTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Challenge-ASTests/Pods-Challenge-ASTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FD21EDD058DD350F2D9372DC /* Pods-Challenge-ASTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challenge-ASTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Challenge-ASTests/Pods-Challenge-ASTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,12 +120,9 @@
 		9139713020B5BF4C00497E32 /* Challenge-AS */ = {
 			isa = PBXGroup;
 			children = (
-				9139713120B5BF4C00497E32 /* AppDelegate.swift */,
-				9139713320B5BF4C00497E32 /* ViewController.swift */,
-				9139713520B5BF4C00497E32 /* Main.storyboard */,
-				9139713820B5BF4D00497E32 /* Assets.xcassets */,
-				9139713A20B5BF4D00497E32 /* LaunchScreen.storyboard */,
-				9139713D20B5BF4D00497E32 /* Info.plist */,
+				9139716020B5C07800497E32 /* Core */,
+				9139715F20B5C06B00497E32 /* App */,
+				9139716120B5C09C00497E32 /* Resources */,
 			);
 			path = "Challenge-AS";
 			sourceTree = "<group>";
@@ -140,6 +143,52 @@
 				9139715320B5BF4D00497E32 /* Info.plist */,
 			);
 			path = "Challenge-ASUITests";
+			sourceTree = "<group>";
+		};
+		9139715F20B5C06B00497E32 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				9139713120B5BF4C00497E32 /* AppDelegate.swift */,
+				9139713320B5BF4C00497E32 /* ViewController.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		9139716020B5C07800497E32 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				9139716220B5C53900497E32 /* Networking */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		9139716120B5C09C00497E32 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9139713520B5BF4C00497E32 /* Main.storyboard */,
+				9139713820B5BF4D00497E32 /* Assets.xcassets */,
+				9139713A20B5BF4D00497E32 /* LaunchScreen.storyboard */,
+				9139713D20B5BF4D00497E32 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9139716220B5C53900497E32 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				9139716320B5C56600497E32 /* APISettings */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		9139716320B5C56600497E32 /* APISettings */ = {
+			isa = PBXGroup;
+			children = (
+				9139716420B5C59E00497E32 /* APISettings.plist */,
+				9139716620B5DCC500497E32 /* APISettings.swift */,
+				9139716820B5DCF800497E32 /* APIEnvironments.swift */,
+			);
+			path = APISettings;
 			sourceTree = "<group>";
 		};
 		CCEEE2178A6DABEB7E90C12A /* Pods */ = {
@@ -275,6 +324,7 @@
 			files = (
 				9139713C20B5BF4D00497E32 /* LaunchScreen.storyboard in Resources */,
 				9139713920B5BF4D00497E32 /* Assets.xcassets in Resources */,
+				9139716520B5C59E00497E32 /* APISettings.plist in Resources */,
 				9139713720B5BF4C00497E32 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,6 +427,8 @@
 			files = (
 				9139713420B5BF4C00497E32 /* ViewController.swift in Sources */,
 				9139713220B5BF4C00497E32 /* AppDelegate.swift in Sources */,
+				9139716920B5DCF800497E32 /* APIEnvironments.swift in Sources */,
+				9139716720B5DCC500497E32 /* APISettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,7 +604,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EQUT7B6WP6;
-				INFOPLIST_FILE = "Challenge-AS/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Challenge-AS/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -571,7 +623,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EQUT7B6WP6;
-				INFOPLIST_FILE = "Challenge-AS/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Challenge-AS/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
