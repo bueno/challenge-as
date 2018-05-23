@@ -6,7 +6,8 @@ target 'Challenge-AS' do
   use_frameworks!
 
   # Pods for Challenge-AS
-  pod 'Alamofire', '~> 4.7'
+  pod 'Alamofire', '~> 4.0'
+  pod 'ModelMapper', '7.0'
 
   target 'Challenge-ASTests' do
     inherit! :search_paths

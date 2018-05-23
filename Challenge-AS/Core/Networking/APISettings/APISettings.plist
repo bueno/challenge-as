@@ -8,13 +8,13 @@
 	<array>
 		<dict>
 			<key>name</key>
-			<string>dev-alphavantage</string>
+			<string>dev</string>
 			<key>APIKey</key>
 			<string>15T06KQ802HISI5N</string>
 			<key>hostURLLogged</key>
-			<string>https://www.alphavantage.co/query?function=</string>
+			<string>https://www.alphavantage.co/</string>
 			<key>hostURLUnlogged</key>
-			<string>https://www.alphavantage.co/query?function=</string>
+			<string>https://www.alphavantage.co/</string>
 		</dict>
 	</array>
 </dict>

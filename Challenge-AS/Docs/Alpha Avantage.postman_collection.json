@@ -1,0 +1,183 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Alpha Avantage",
+		"_postman_id": "db98216d-ecde-2659-10a2-446961feb6b5",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Stock Time Series Data",
+			"description": "",
+			"item": [
+				{
+					"name": "TIME_SERIES_INTRADAY",
+					"request": {
+						"url": {
+							"raw": "{{apiURL}}/query?function=TIME_SERIES_INTRADAY&symbol=MSFT&interval=1min&apikey={{apiKEY}}",
+							"host": [
+								"{{apiURL}}"
+							],
+							"path": [
+								"query"
+							],
+							"query": [
+								{
+									"key": "function",
+									"value": "TIME_SERIES_INTRADAY",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "symbol",
+									"value": "MSFT",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "interval",
+									"value": "1min",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "apikey",
+									"value": "{{apiKEY}}",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "TIME_SERIES_DAILY",
+					"request": {
+						"url": {
+							"raw": "{{apiURL}}/query?function=TIME_SERIES_DAILY&symbol=MSFT&apikey={{apiKEY}}",
+							"host": [
+								"{{apiURL}}"
+							],
+							"path": [
+								"query"
+							],
+							"query": [
+								{
+									"key": "function",
+									"value": "TIME_SERIES_DAILY",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "symbol",
+									"value": "MSFT",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "apikey",
+									"value": "{{apiKEY}}",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "TIME_SERIES_WEEKLY",
+					"request": {
+						"url": {
+							"raw": "{{apiURL}}/query?function=TIME_SERIES_WEEKLY&symbol=MSFT&apikey={{apiKEY}}",
+							"host": [
+								"{{apiURL}}"
+							],
+							"path": [
+								"query"
+							],
+							"query": [
+								{
+									"key": "function",
+									"value": "TIME_SERIES_WEEKLY",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "symbol",
+									"value": "MSFT",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "apikey",
+									"value": "{{apiKEY}}",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "TIME_SERIES_MONTHLY",
+					"request": {
+						"url": {
+							"raw": "{{apiURL}}/query?function=TIME_SERIES_MONTHLY&symbol=MSFT&apikey={{apiKEY}}",
+							"host": [
+								"{{apiURL}}"
+							],
+							"path": [
+								"query"
+							],
+							"query": [
+								{
+									"key": "function",
+									"value": "TIME_SERIES_MONTHLY",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "symbol",
+									"value": "MSFT",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "apikey",
+									"value": "{{apiKEY}}",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

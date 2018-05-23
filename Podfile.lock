@@ -1,16 +1,20 @@
 PODS:
   - Alamofire (4.7.2)
+  - ModelMapper (7.0.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.7)
+  - Alamofire (~> 4.0)
+  - ModelMapper (= 7.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - ModelMapper
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  ModelMapper: 73a3e79c9f02af80190115acc15aa8dcd199e9d0
 
-PODFILE CHECKSUM: 3ec537682bc0ff6c5838217c23501af1dcd67cf7
+PODFILE CHECKSUM: d93ec3427bebcf8e3a74c67b7b6eacad76497003
 
 COCOAPODS: 1.5.2
