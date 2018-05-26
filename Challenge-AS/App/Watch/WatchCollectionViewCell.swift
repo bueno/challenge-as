@@ -9,7 +9,5 @@
 import UIKit
 
 class WatchCollectionViewCell: UICollectionViewCell {
-    
     @IBOutlet private weak var name: UILabel!
-
 }

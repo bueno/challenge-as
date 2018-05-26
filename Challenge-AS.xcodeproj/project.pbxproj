@@ -34,8 +34,23 @@
 		913971D520B63F8500497E32 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913971D320B63F8500497E32 /* ProfileViewController.swift */; };
 		913971DA20B65C9800497E32 /* WatchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913971D920B65C9800497E32 /* WatchCollectionViewCell.swift */; };
 		913971DC20B67DB200497E32 /* WatchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913971DB20B67DB200497E32 /* WatchDetailViewController.swift */; };
+		9148C05C20BC86AF006DA3C1 /* ChartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9148C05B20BC86AF006DA3C1 /* ChartItem.swift */; };
+		9148C05F20BC8D96006DA3C1 /* ChartBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9148C05E20BC8D96006DA3C1 /* ChartBaseViewController.swift */; };
+		9148C06120BC96BF006DA3C1 /* StockDataSerieItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9148C06020BC96BF006DA3C1 /* StockDataSerieItem.swift */; };
 		91A3F59A20B8CB7C00124D59 /* SymbolAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A3F59920B8CB7C00124D59 /* SymbolAPI.swift */; };
 		91A3F59E20B8DF5300124D59 /* SymbolResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A3F59D20B8DF5300124D59 /* SymbolResponse.swift */; };
+		91A3F5A020B8ED6A00124D59 /* WatchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91A3F59F20B8ED6A00124D59 /* WatchCollectionViewCell.xib */; };
+		91A3F5A320B8F04500124D59 /* CubicLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A3F5A220B8F04500124D59 /* CubicLineViewController.swift */; };
+		91A3F5A620B9060300124D59 /* ChartDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A3F5A520B9060300124D59 /* ChartDefaults.swift */; };
+		91A3F5A820B9065600124D59 /* Devices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A3F5A720B9065600124D59 /* Devices.swift */; };
+		91C1C17020BC3A5F000BA6E6 /* WatchDetailDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C1C16F20BC3A5F000BA6E6 /* WatchDetailDataView.swift */; };
+		91C1C17320BC3AFC000BA6E6 /* WatchDetailDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91C1C17220BC3AFC000BA6E6 /* WatchDetailDataView.xib */; };
+		91C1C17620BC54B0000BA6E6 /* UIView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C1C17520BC54B0000BA6E6 /* UIView+Border.swift */; };
+		91C1C17D20BC6135000BA6E6 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C1C17C20BC6135000BA6E6 /* SpinnerView.swift */; };
+		91C1C18020BC6331000BA6E6 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C1C17F20BC6330000BA6E6 /* LoadingView.swift */; };
+		91C1C18220BC63C8000BA6E6 /* Application+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C1C18120BC63C8000BA6E6 /* Application+Navigation.swift */; };
+		91C1C18420BC6461000BA6E6 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91C1C18320BC6461000BA6E6 /* LoadingView.xib */; };
+		91C1C18620BC8663000BA6E6 /* ChartValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C1C18520BC8663000BA6E6 /* ChartValue.swift */; };
 		9638021F685AA1150350615A /* Pods_Challenge_ASUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F12B4B36896308288D5AC3C /* Pods_Challenge_ASUITests.framework */; };
 		A33A0E4C310C8CAC859FD359 /* Pods_Challenge_AS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD9AB67E2FC1E80AD38731 /* Pods_Challenge_AS.framework */; };
 		FE8B293CF8C39E010029951F /* Pods_Challenge_ASTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47E3BC5EAE3D8581B4CA5FF6 /* Pods_Challenge_ASTests.framework */; };
@@ -100,8 +115,23 @@
 		913971D320B63F8500497E32 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		913971D920B65C9800497E32 /* WatchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchCollectionViewCell.swift; sourceTree = "<group>"; };
 		913971DB20B67DB200497E32 /* WatchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDetailViewController.swift; sourceTree = "<group>"; };
+		9148C05B20BC86AF006DA3C1 /* ChartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartItem.swift; sourceTree = "<group>"; };
+		9148C05E20BC8D96006DA3C1 /* ChartBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartBaseViewController.swift; sourceTree = "<group>"; };
+		9148C06020BC96BF006DA3C1 /* StockDataSerieItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDataSerieItem.swift; sourceTree = "<group>"; };
 		91A3F59920B8CB7C00124D59 /* SymbolAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolAPI.swift; sourceTree = "<group>"; };
 		91A3F59D20B8DF5300124D59 /* SymbolResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolResponse.swift; sourceTree = "<group>"; };
+		91A3F59F20B8ED6A00124D59 /* WatchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WatchCollectionViewCell.xib; sourceTree = "<group>"; };
+		91A3F5A220B8F04500124D59 /* CubicLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubicLineViewController.swift; sourceTree = "<group>"; };
+		91A3F5A520B9060300124D59 /* ChartDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDefaults.swift; sourceTree = "<group>"; };
+		91A3F5A720B9065600124D59 /* Devices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Devices.swift; sourceTree = "<group>"; };
+		91C1C16F20BC3A5F000BA6E6 /* WatchDetailDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDetailDataView.swift; sourceTree = "<group>"; };
+		91C1C17220BC3AFC000BA6E6 /* WatchDetailDataView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WatchDetailDataView.xib; sourceTree = "<group>"; };
+		91C1C17520BC54B0000BA6E6 /* UIView+Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Border.swift"; sourceTree = "<group>"; };
+		91C1C17C20BC6135000BA6E6 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
+		91C1C17F20BC6330000BA6E6 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		91C1C18120BC63C8000BA6E6 /* Application+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Application+Navigation.swift"; sourceTree = "<group>"; };
+		91C1C18320BC6461000BA6E6 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		91C1C18520BC8663000BA6E6 /* ChartValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartValue.swift; sourceTree = "<group>"; };
 		996CB618E22B3DE1443C3DEA /* Pods-Challenge-ASTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challenge-ASTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Challenge-ASTests/Pods-Challenge-ASTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FD21EDD058DD350F2D9372DC /* Pods-Challenge-ASTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challenge-ASTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Challenge-ASTests/Pods-Challenge-ASTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -191,9 +221,11 @@
 			isa = PBXGroup;
 			children = (
 				913971D820B647C000497E32 /* View */,
+				91A3F5A120B8F01A00124D59 /* Chart */,
 				91A3F59420B8C8AF00124D59 /* Base */,
 				91A3F59320B8C85800124D59 /* Profile */,
 				9139719320B6261700497E32 /* Watch */,
+				91C1C17120BC3A67000BA6E6 /* WatchDetail */,
 				9139713320B5BF4C00497E32 /* ViewController.swift */,
 			);
 			path = App;
@@ -261,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				9139716F20B5E1F100497E32 /* Constants.swift */,
+				91A3F5A720B9065600124D59 /* Devices.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -287,6 +320,8 @@
 		9139717A20B5ED4400497E32 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				91C1C17820BC5E6C000BA6E6 /* Resources */,
+				91C1C17420BC5498000BA6E6 /* Extensions */,
 				9139717B20B5ED5600497E32 /* Error */,
 			);
 			path = Library;
@@ -313,6 +348,7 @@
 			children = (
 				9139718220B5F51900497E32 /* StockData.swift */,
 				9139718420B5F59D00497E32 /* StockDataSerie.swift */,
+				9148C06020BC96BF006DA3C1 /* StockDataSerieItem.swift */,
 			);
 			path = StockData;
 			sourceTree = "<group>";
@@ -339,7 +375,7 @@
 			children = (
 				9139719420B6262E00497E32 /* WatchViewController.swift */,
 				913971D920B65C9800497E32 /* WatchCollectionViewCell.swift */,
-				913971DB20B67DB200497E32 /* WatchDetailViewController.swift */,
+				91A3F59F20B8ED6A00124D59 /* WatchCollectionViewCell.xib */,
 			);
 			path = Watch;
 			sourceTree = "<group>";
@@ -368,6 +404,55 @@
 				9139718F20B6044E00497E32 /* BaseViewController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		91A3F5A120B8F01A00124D59 /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				91A3F5A520B9060300124D59 /* ChartDefaults.swift */,
+				91C1C18520BC8663000BA6E6 /* ChartValue.swift */,
+				9148C05B20BC86AF006DA3C1 /* ChartItem.swift */,
+				9148C05E20BC8D96006DA3C1 /* ChartBaseViewController.swift */,
+				91A3F5A220B8F04500124D59 /* CubicLineViewController.swift */,
+			);
+			path = Chart;
+			sourceTree = "<group>";
+		};
+		91C1C17120BC3A67000BA6E6 /* WatchDetail */ = {
+			isa = PBXGroup;
+			children = (
+				913971DB20B67DB200497E32 /* WatchDetailViewController.swift */,
+				91C1C16F20BC3A5F000BA6E6 /* WatchDetailDataView.swift */,
+				91C1C17220BC3AFC000BA6E6 /* WatchDetailDataView.xib */,
+			);
+			path = WatchDetail;
+			sourceTree = "<group>";
+		};
+		91C1C17420BC5498000BA6E6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				91C1C17520BC54B0000BA6E6 /* UIView+Border.swift */,
+				91C1C18120BC63C8000BA6E6 /* Application+Navigation.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		91C1C17820BC5E6C000BA6E6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				91C1C17B20BC5FA9000BA6E6 /* Loader */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		91C1C17B20BC5FA9000BA6E6 /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				91C1C17F20BC6330000BA6E6 /* LoadingView.swift */,
+				91C1C18320BC6461000BA6E6 /* LoadingView.xib */,
+				91C1C17C20BC6135000BA6E6 /* SpinnerView.swift */,
+			);
+			path = Loader;
 			sourceTree = "<group>";
 		};
 		CCEEE2178A6DABEB7E90C12A /* Pods */ = {
@@ -502,8 +587,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9139713C20B5BF4D00497E32 /* LaunchScreen.storyboard in Resources */,
+				91C1C17320BC3AFC000BA6E6 /* WatchDetailDataView.xib in Resources */,
 				9139713920B5BF4D00497E32 /* Assets.xcassets in Resources */,
 				9139716520B5C59E00497E32 /* APISettings.plist in Resources */,
+				91C1C18420BC6461000BA6E6 /* LoadingView.xib in Resources */,
+				91A3F5A020B8ED6A00124D59 /* WatchCollectionViewCell.xib in Resources */,
 				9139713720B5BF4C00497E32 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -614,22 +702,34 @@
 				9139717320B5E5D100497E32 /* AlamofireNetworking.swift in Sources */,
 				9139718B20B5FC0E00497E32 /* StockDataAPI.swift in Sources */,
 				9139716C20B5E17C00497E32 /* Constants+Endpoints.swift in Sources */,
+				91C1C18220BC63C8000BA6E6 /* Application+Navigation.swift in Sources */,
 				9139717920B5E75600497E32 /* AbstractResponse.swift in Sources */,
+				91A3F5A820B9065600124D59 /* Devices.swift in Sources */,
 				9139718520B5F59D00497E32 /* StockDataSerie.swift in Sources */,
 				9139713220B5BF4C00497E32 /* AppDelegate.swift in Sources */,
 				9139719020B6044E00497E32 /* BaseViewController.swift in Sources */,
 				913971D520B63F8500497E32 /* ProfileViewController.swift in Sources */,
 				913971DA20B65C9800497E32 /* WatchCollectionViewCell.swift in Sources */,
 				9139716920B5DCF800497E32 /* APIEnvironments.swift in Sources */,
+				9148C06120BC96BF006DA3C1 /* StockDataSerieItem.swift in Sources */,
+				91A3F5A320B8F04500124D59 /* CubicLineViewController.swift in Sources */,
+				91C1C18620BC8663000BA6E6 /* ChartValue.swift in Sources */,
 				9139718020B5F39C00497E32 /* Symbol.swift in Sources */,
 				9139719520B6262E00497E32 /* WatchViewController.swift in Sources */,
 				9139717D20B5ED7E00497E32 /* ASError.swift in Sources */,
+				9148C05F20BC8D96006DA3C1 /* ChartBaseViewController.swift in Sources */,
+				91C1C17620BC54B0000BA6E6 /* UIView+Border.swift in Sources */,
+				91C1C17D20BC6135000BA6E6 /* SpinnerView.swift in Sources */,
+				9148C05C20BC86AF006DA3C1 /* ChartItem.swift in Sources */,
 				9139718320B5F51900497E32 /* StockData.swift in Sources */,
 				9139718820B5FA6C00497E32 /* StockDataRequest.swift in Sources */,
+				91C1C17020BC3A5F000BA6E6 /* WatchDetailDataView.swift in Sources */,
 				9139717720B5E6E100497E32 /* AbstractRequest.swift in Sources */,
+				91A3F5A620B9060300124D59 /* ChartDefaults.swift in Sources */,
 				9139716720B5DCC500497E32 /* APISettings.swift in Sources */,
 				913971DC20B67DB200497E32 /* WatchDetailViewController.swift in Sources */,
 				9139717020B5E1F100497E32 /* Constants.swift in Sources */,
+				91C1C18020BC6331000BA6E6 /* LoadingView.swift in Sources */,
 				9139718E20B5FC7600497E32 /* StockDataResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

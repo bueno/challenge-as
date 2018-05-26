@@ -11,21 +11,17 @@ import Mapper
 
 public final class StockDataSerie: Mappable {
     
-    var name: String? = ""
-    var value: String? = ""
+    //var item: StockDataSerieItem? = nil
+    var item: AnyObject!
 
     public required init(map: Mapper) throws {
-        name = map.optionalFrom("name")
-        value = map.optionalFrom("value")
+        try item = map.from("", transformation: extractItem) as AnyObject as? StockDataSerieItem
     }
     
-    required public init(coder aDecoder: NSCoder) {
-        self.name = aDecoder.decodeObject(forKey: "name") as? String
-        self.value = aDecoder.decodeObject(forKey: "value") as? String
-    }
-    
-    public func encode(with aCoder: NSCoder) {
-        aCoder.encode(name, forKey: "name")
-        aCoder.encode(value, forKey: "value")
+    private func extractItem(object: Any?) throws -> String {
+        guard let item = object as? String else {
+            throw MapperError.convertibleError(value: object, type: String.self)
+        }
+        return item
     }
 }

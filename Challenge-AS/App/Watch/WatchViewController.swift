@@ -68,4 +68,5 @@ extension WatchViewController: UICollectionViewDelegate, UICollectionViewDataSou
             controller.symbol = symbolCollection[indexPath.row]
         }
     }
+    
 }

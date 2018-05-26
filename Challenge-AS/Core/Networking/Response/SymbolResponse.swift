@@ -19,7 +19,7 @@ class SymbolResponse {
     public func getMockData() -> [Symbol] {
         var data: [Symbol] = []
         data.append(Symbol(id: "AMZN", name: "Amazon"))
-        data.append(Symbol(id: "AAPL", name: "Apple Onc."))
+        data.append(Symbol(id: "AAPL", name: "Apple Inc."))
         data.append(Symbol(id: "FB", name: "Facebook"))
         data.append(Symbol(id: "IBM", name: "IBM"))
         data.append(Symbol(id: "MSFT", name: "Microsoft"))
