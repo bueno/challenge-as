@@ -8,6 +8,8 @@
 
 import Foundation
 
-class Symbol {
-    var name: String?
+struct Symbol {
+    var id: String
+    var name: String
 }
+
