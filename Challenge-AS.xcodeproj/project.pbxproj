@@ -33,7 +33,6 @@
 		9148C07020BCE14F006DA3C1 /* StockSerieItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9148C06F20BCE14F006DA3C1 /* StockSerieItem.swift */; };
 		9148C07220BCE2B3006DA3C1 /* StockAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9148C07120BCE2B3006DA3C1 /* StockAPI.swift */; };
 		91A3F59A20B8CB7C00124D59 /* SymbolAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A3F59920B8CB7C00124D59 /* SymbolAPI.swift */; };
-		91A3F5A020B8ED6A00124D59 /* WatchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91A3F59F20B8ED6A00124D59 /* WatchCollectionViewCell.xib */; };
 		91A3F5A320B8F04500124D59 /* CubicLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A3F5A220B8F04500124D59 /* CubicLineViewController.swift */; };
 		91A3F5A620B9060300124D59 /* ChartDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A3F5A520B9060300124D59 /* ChartDefaults.swift */; };
 		91A3F5A820B9065600124D59 /* Devices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A3F5A720B9065600124D59 /* Devices.swift */; };
@@ -124,7 +123,6 @@
 		9148C06F20BCE14F006DA3C1 /* StockSerieItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockSerieItem.swift; sourceTree = "<group>"; };
 		9148C07120BCE2B3006DA3C1 /* StockAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockAPI.swift; sourceTree = "<group>"; };
 		91A3F59920B8CB7C00124D59 /* SymbolAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolAPI.swift; sourceTree = "<group>"; };
-		91A3F59F20B8ED6A00124D59 /* WatchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WatchCollectionViewCell.xib; sourceTree = "<group>"; };
 		91A3F5A220B8F04500124D59 /* CubicLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubicLineViewController.swift; sourceTree = "<group>"; };
 		91A3F5A520B9060300124D59 /* ChartDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDefaults.swift; sourceTree = "<group>"; };
 		91A3F5A720B9065600124D59 /* Devices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Devices.swift; sourceTree = "<group>"; };
@@ -324,7 +322,6 @@
 			children = (
 				9139719420B6262E00497E32 /* WatchViewController.swift */,
 				913971D920B65C9800497E32 /* WatchCollectionViewCell.swift */,
-				91A3F59F20B8ED6A00124D59 /* WatchCollectionViewCell.xib */,
 			);
 			path = Watch;
 			sourceTree = "<group>";
@@ -572,7 +569,6 @@
 				9139713920B5BF4D00497E32 /* Assets.xcassets in Resources */,
 				9139716520B5C59E00497E32 /* APISettings.plist in Resources */,
 				91C1C18420BC6461000BA6E6 /* LoadingView.xib in Resources */,
-				91A3F5A020B8ED6A00124D59 /* WatchCollectionViewCell.xib in Resources */,
 				9139713720B5BF4C00497E32 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

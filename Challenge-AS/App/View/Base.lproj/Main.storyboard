@@ -21,7 +21,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Jfi-ih-giN">
                                 <rect key="frame" x="0.0" y="74" width="375" height="593"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mkA-lH-3rH">
                                     <size key="itemSize" width="200" height="200"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -36,12 +36,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1G-QY-KtV">
-                                                    <rect key="frame" x="79" y="90" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <imageView userInteractionEnabled="NO" tag="101" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lRT-q7-V4e">
                                                     <rect key="frame" x="20" y="20" width="160" height="160"/>
                                                 </imageView>
@@ -51,14 +45,11 @@
                                         <constraints>
                                             <constraint firstItem="lRT-q7-V4e" firstAttribute="leading" secondItem="pIc-NT-foB" secondAttribute="leadingMargin" constant="12" id="M7b-gd-BiU"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="lRT-q7-V4e" secondAttribute="bottom" constant="12" id="RIQ-F3-2Nz"/>
-                                            <constraint firstItem="L1G-QY-KtV" firstAttribute="centerY" secondItem="pIc-NT-foB" secondAttribute="centerY" id="Szi-Hm-ORy"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="lRT-q7-V4e" secondAttribute="trailing" constant="12" id="ojW-Bf-Ngo"/>
-                                            <constraint firstItem="L1G-QY-KtV" firstAttribute="centerX" secondItem="pIc-NT-foB" secondAttribute="centerX" id="tuk-rn-h7y"/>
                                             <constraint firstItem="lRT-q7-V4e" firstAttribute="top" secondItem="pIc-NT-foB" secondAttribute="topMargin" constant="12" id="ztx-eB-pNt"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="logoImageView" destination="lRT-q7-V4e" id="Uzq-pG-1aA"/>
-                                            <outlet property="nameLabel" destination="L1G-QY-KtV" id="gIt-ps-xnB"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -68,7 +59,7 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Jfi-ih-giN" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="8zc-Cj-xuG"/>
                             <constraint firstAttribute="trailing" secondItem="Jfi-ih-giN" secondAttribute="trailing" id="BF0-2i-KMa"/>
@@ -289,8 +280,17 @@
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.12549019610000001" green="0.60784313729999995" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.12549019610000001" green="0.60784313729999995" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemTintColor">
+                                <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="bkL-Cc-dhv" kind="relationship" relationship="viewControllers" id="vYj-ee-dEx"/>

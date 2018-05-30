@@ -9,6 +9,5 @@
 import UIKit
 
 class WatchCollectionViewCell: UICollectionViewCell {
-    @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var logoImageView: UIImageView!
 }
