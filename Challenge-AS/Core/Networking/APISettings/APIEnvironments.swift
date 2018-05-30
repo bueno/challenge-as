@@ -11,6 +11,7 @@ import UIKit
 class APIEnvironments: NSObject {
     var name: String!
     var APIKey: String!
-    var hostURLLogged: String!
-    var hostURLUnlogged: String!
+    var scheme: String!
+    var host: String!
+    var path: String!
 }

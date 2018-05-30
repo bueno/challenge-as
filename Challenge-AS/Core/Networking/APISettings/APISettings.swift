@@ -48,8 +48,9 @@ class APISettings: NSObject {
                 
                 environment.name = envDictionary.object(forKey:"name") as? String ?? ""
                 environment.APIKey = envDictionary.object(forKey:"APIKey") as? String ?? ""
-                environment.hostURLLogged = envDictionary.object(forKey:"hostURLLogged") as? String ?? ""
-                environment.hostURLUnlogged = envDictionary.object(forKey:"hostURLUnlogged") as? String ?? ""
+                environment.scheme = envDictionary.object(forKey:"scheme") as? String ?? ""
+                environment.host = envDictionary.object(forKey:"host") as? String ?? ""
+                environment.path = envDictionary.object(forKey:"path") as? String ?? ""
                 currentEnvironment = environment
             }
             break

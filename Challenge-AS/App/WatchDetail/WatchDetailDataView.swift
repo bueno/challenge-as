@@ -34,12 +34,12 @@ class WatchDetailDataView: UIView {
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     }
     
-    func setup(data: StockData) {
-        closeLabel.text = data.symbol
-        openLabel.text = data.symbol
-        highLabel.text = data.symbol
-        lowLabel.text = data.symbol
-        volumeLabel.text = data.symbol
+    func setup(item: StockSerieItem) {
+        closeLabel.text = String(format: "%.02f", (item.close as NSString).doubleValue)
+        openLabel.text = String(format: "%.02f", (item.open as NSString).doubleValue)
+        highLabel.text = String(format: "%.02f", (item.high as NSString).doubleValue)
+        lowLabel.text = String(format: "%.02f", (item.low as NSString).doubleValue)
+        volumeLabel.text = item.volume
     }
     
 }

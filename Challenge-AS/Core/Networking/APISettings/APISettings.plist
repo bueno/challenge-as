@@ -11,10 +11,12 @@
 			<string>dev</string>
 			<key>APIKey</key>
 			<string>15T06KQ802HISI5N</string>
-			<key>hostURLLogged</key>
-			<string>https://www.alphavantage.co/</string>
-			<key>hostURLUnlogged</key>
-			<string>https://www.alphavantage.co/</string>
+			<key>scheme</key>
+			<string>https</string>
+			<key>host</key>
+			<string>www.alphavantage.co</string>
+			<key>path</key>
+			<string>/query</string>
 		</dict>
 	</array>
 </dict>

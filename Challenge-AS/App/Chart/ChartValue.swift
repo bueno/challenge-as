@@ -9,11 +9,13 @@
 import UIKit
 
 struct ChartValue {
-    let number: Int
-    let text: String
+    var number: Int
+    var text: String
+    var item: StockSerieItem
     
-    init(number: Int, text: String) {
+    init(number: Int, text: String, item: StockSerieItem) {
         self.number = number
         self.text = text
+        self.item = item
     }
 }

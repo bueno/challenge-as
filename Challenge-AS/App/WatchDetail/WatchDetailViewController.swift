@@ -37,12 +37,6 @@ class WatchDetailViewController: BaseViewController {
         super.viewDidLoad()
         
         self.tabBarController?.tabBar.isHidden = true
-        
-        //TODO:
-//        self.dataView.addBorder(toSide: .Top, withColor: UIColor.black, andThickness: 1.0)
-        
-//        self.navigationController?.navigationBar.backgroundColor = UIColor.black
-//        self.navigationController?.navigationItem.tit = UIColor.black
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -85,50 +79,99 @@ class WatchDetailViewController: BaseViewController {
         
         LoadingView.shared.showLoading()
         
-        let stockDataRequest = StockDataRequest(symbol: symbol?.id)
+        let symbol = self.symbol?.id
+        let interval = AlphaVantage.Interval.m60.rawValue
         
-        StockDataAPI.sharedInstance.getTimeSeriesWeekly(request: stockDataRequest, success: { (success: StockDataResponse?) in
-            guard let successResponse = success else {
-                return
+        StockAPI.getStockTimeSeriesIntraday(symbol: symbol!, interval: interval) { (result) in
+            switch result {
+            case .success(let stock):
+                self.prepareData(stock: stock)
+                LoadingView.shared.dismissLoading()
+            case .failure(let error):
+                print(error)
+                self.showAlert()
+                LoadingView.shared.dismissLoading()
+            }
+        }
+    }
+    
+    fileprivate func prepareData(stock: StockMetaData) {
+        let array = Array(stock.item)
+        if array.count > 0 {
+            
+            var chartItems: [ChartItem] = []
+            
+            var i = array.count
+            for item in array {
+                i=i-1
+                let newValue = ChartValue(number: i, text: item.value.close, item: item.value)
+                let newItem = ChartItem(date: item.key, value: newValue)
+                chartItems.append(newItem)
+                
+                print("Item: \(i) => Key: \(item.key) => Value: \(item.value.close)")
             }
             
-            if let stockData = successResponse.result {
-                
-//                let data = successResponse.data {
-//                    print
-//                }
-                
-                let value4 = ChartValue(number: 4, text: "188.5800")
-                let value3 = ChartValue(number: 2, text: "186.3100")
-                let value2 = ChartValue(number: 3, text: "188.5900")
-                let value1 = ChartValue(number: 1, text: "183.8300")
-                let value0 = ChartValue(number: 0, text: "162.3200")
-                
-                let item0 = ChartItem(name: "18-05-25", value: value4)
-                let item1 = ChartItem(name: "18-05-18", value: value3)
-                let item2 = ChartItem(name: "18-05-11", value: value2)
-                let item3 = ChartItem(name: "18-05-04", value: value1)
-                let item4 = ChartItem(name: "18-04-27", value: value0)
-                
-                let chartItems = [item0, item1, item2, item3, item4]
-                var chartItemsSorted = chartItems
-                chartItemsSorted.sort {
-                    return $0.value.number < $1.value.number
-                }
-
-                self.showChartViewController(controller: CubicLinesViewController(), items: chartItems, itemsSorted: chartItemsSorted)
-                
-                self.closeValueLabel.text = "187.20"
-                
-                self.dataView.setup(data: stockData)
-                
-                LoadingView.shared.dismissLoading()
-
-                print(stockData)
+            //Sorted all items by date for future filter by one day
+            var itemsSortedByDate = chartItems
+            itemsSortedByDate.sort {
+                return $0.date > $1.date
             }
-        }) { (error: ASError?) in
-            LoadingView.shared.dismissLoading()
-            print(error?.errorMessage as Any)
+            
+            let f = itemsSortedByDate.first
+            let oneDay = String(describing: f?.date)
+            print("Date: \(oneDay)")
+            let oneDayString = "2018-05-25"
+            
+            //Items filtered
+            var itemsFiltered = chartItems.filter { $0.date.contains(oneDayString)  }
+            itemsFiltered.sort {
+                return $0.date < $1.date
+            }
+            
+            //Items filtered Sorted (Close value)
+            var itemsSortedFiltered = itemsSortedByDate.filter { $0.date.contains(oneDayString)  }
+            itemsSortedFiltered.sort {
+                return $0.value.item.close < $1.value.item.close
+            }
+            
+            var newNumber: Int = itemsSortedFiltered.count
+            var newChartItemsFiltered: [ChartItem] = []
+            for itemBase in itemsFiltered {
+                
+                newNumber=newNumber-1
+                
+                let val = String(format: "%.02f", (itemBase.value.text as NSString).doubleValue)
+                let dat = self.getTimeFromDate(text: itemBase.date)
+                
+                let newValue = ChartValue(number: newNumber, text: val, item: itemBase.value.item)
+                let newItem = ChartItem(date: dat, value: newValue)
+                newChartItemsFiltered.append(newItem)
+            }
+            
+            newNumber = itemsSortedFiltered.count
+            var newChartItemsSorteredFiltered: [ChartItem] = []
+            for itemBase in itemsSortedFiltered {
+                newNumber=newNumber-1
+                
+                let val = String(format: "%.02f", (itemBase.value.text as NSString).doubleValue)
+                let dat = self.getTimeFromDate(text: itemBase.date)
+                
+                let newValue = ChartValue(number: newNumber, text: val, item: itemBase.value.item)
+                let newItem = ChartItem(date: dat , value: newValue)
+                newChartItemsSorteredFiltered.append(newItem)
+            }
+            
+            if (newChartItemsFiltered.count > 0) {
+                self.showChartViewController(controller: CubicLinesViewController(), items: newChartItemsFiltered, itemsSorted: newChartItemsSorteredFiltered)
+                
+                self.closeValueLabel.text = String(format: "%.02f", (f?.value.item.close as! NSString).doubleValue)
+                self.dataView.setup(item: (f?.value.item)!)
+                
+            } else {
+                self.showAlert()
+            }
+        } else {
+            self.showAlert()
         }
     }
     
@@ -147,4 +190,28 @@ class WatchDetailViewController: BaseViewController {
         chartView.addSubview(controller.view)
         currentViewController = controller
     }
+    
+    //TODO: Colocar mensagem num controller centralizado
+    fileprivate func showAlert() {
+        let alert = UIAlertController(title: "Oops!", message: "An unexpected error has occurred. Try again later.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true)
+    }
+    
+    //TODO: Criar um utils
+    fileprivate func formatterStringDate(_ date: String) -> String
+    {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss z"
+        let date = dateFormatter.date(from: date)
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return  dateFormatter.string(from: date!)
+    }
+    
+    fileprivate func getTimeFromDate(text: String) -> String {
+        let indexStartOfText = text.index(text.startIndex, offsetBy: 11)
+        let indexEndOfText = text.index(text.endIndex, offsetBy: -3)
+        return String(text[indexStartOfText..<indexEndOfText])
+    }
+    
 }

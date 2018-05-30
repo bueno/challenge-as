@@ -18,7 +18,7 @@ class WatchViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        symbolCollection = SymbolAPI.sharedInstance.getAllSymbols()
+        symbolCollection = SymbolAPI.getAllSymbols()
         
         adjustCollectionViewLayout()
     }

@@ -1,24 +1,20 @@
 PODS:
-  - Alamofire (4.7.2)
   - ModelMapper (7.0.0)
   - SwiftCharts (0.6.1)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.0)
   - ModelMapper (= 7.0)
   - SwiftCharts
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - Alamofire
     - ModelMapper
     - SwiftCharts
 
 SPEC CHECKSUMS:
-  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   ModelMapper: 73a3e79c9f02af80190115acc15aa8dcd199e9d0
   SwiftCharts: 77378d6cf667e95f9c79a745b6778e66eed5339c
 
-PODFILE CHECKSUM: a1403e193a826586ca1a96b79da3310d7342f9d7
+PODFILE CHECKSUM: e0ad72eaf288e9b8a8a669766491a1e95a79d050
 
 COCOAPODS: 1.5.2

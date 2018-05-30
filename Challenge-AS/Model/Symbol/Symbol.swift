@@ -12,4 +12,3 @@ struct Symbol {
     var id: String
     var name: String
 }
-

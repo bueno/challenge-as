@@ -20,12 +20,12 @@ class CubicLinesViewController: ChartBaseViewController {
         
         let chartPoints: [ChartPoint] = chartItems.enumerated().map {index, item in
             let xLabelSettings = ChartLabelSettings(font: ChartDefaults.labelFont, rotation: 45, rotationKeep: .top)
-            let x = ChartAxisValueString(item.name, order: index, labelSettings: xLabelSettings)
+            let x = ChartAxisValueString(item.date, order: index, labelSettings: xLabelSettings)
             let y = ChartAxisValueString(item.value.text, order: item.value.number, labelSettings: labelSettings)
             return ChartPoint(x: x, y: y)
         }
         
-        let xValues = [ChartAxisValueString("", order: -1)] + chartPoints.map{$0.x} + [ChartAxisValueString("", order: 5)]
+        let xValues = [ChartAxisValueString("", order: 0)] + chartPoints.map{$0.x} + [ChartAxisValueString("", order: chartPoints.count)]
         
         func toYValue(_ value: ChartValue) -> ChartAxisValue {
             return ChartAxisValueString(value.text, order: value.number, labelSettings: labelSettings)

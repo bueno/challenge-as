@@ -7,11 +7,11 @@
 //
 
 struct ChartItem {
-    let name: String
+    let date: String
     let value: ChartValue
     
-    init(name: String, value: ChartValue) {
-        self.name = name
+    init(date: String, value: ChartValue) {
+        self.date = date
         self.value = value
     }
 }
