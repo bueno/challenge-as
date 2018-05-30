@@ -14,6 +14,7 @@ class WatchDetailViewController: BaseViewController {
     
     @IBOutlet weak var dataView: WatchDetailDataView!
     @IBOutlet private weak var chartView: UIView!
+    @IBOutlet private weak var messageLabel: UILabel!
     @IBOutlet private weak var symbolNameLabel: UILabel!
     @IBOutlet private weak var closeValueLabel: UILabel!
     @IBOutlet private weak var timeSeriesSegmentedControl: UISegmentedControl!
@@ -54,6 +55,7 @@ class WatchDetailViewController: BaseViewController {
     //MARK: Actions
     
     @IBAction func timeSeriesSegmentedControlChanged(_ sender: Any) {
+        self.removeCurrentViewController()
         loadStockData()
     }
     
@@ -77,6 +79,7 @@ class WatchDetailViewController: BaseViewController {
     
     fileprivate func loadStockData() {
         
+        self.messageLabel.isHidden = true;
         LoadingView.shared.showLoading()
         
         let symbol = self.symbol?.id
@@ -175,11 +178,17 @@ class WatchDetailViewController: BaseViewController {
         }
     }
     
-    fileprivate func showChartViewController(controller: ChartBaseViewController, items: [ChartItem], itemsSorted: [ChartItem]) {
+    fileprivate func removeCurrentViewController() {
         if let currentViewController = currentViewController {
             currentViewController.removeFromParentViewController()
             currentViewController.view.removeFromSuperview()
         }
+        self.dataView.clear()
+    }
+    
+    fileprivate func showChartViewController(controller: ChartBaseViewController, items: [ChartItem], itemsSorted: [ChartItem]) {
+        
+        self.removeCurrentViewController()
         controller.chartItems = items
         controller.chartItemsSorted = itemsSorted
         
@@ -193,9 +202,15 @@ class WatchDetailViewController: BaseViewController {
     
     //TODO: Colocar mensagem num controller centralizado
     fileprivate func showAlert() {
-        let alert = UIAlertController(title: "Oops!", message: "An unexpected error has occurred. Try again later.", preferredStyle: .alert)
+        //TODO: Localization
+        let message = "An unexpected error has occurred. Try again later."
+
+        let alert = UIAlertController(title: "Oops!", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         self.present(alert, animated: true)
+        
+        self.messageLabel.text = message
+        self.messageLabel.isHidden = false
     }
     
     //TODO: Criar um utils

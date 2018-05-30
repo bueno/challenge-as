@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -41,15 +42,23 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" tag="101" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lRT-q7-V4e">
+                                                    <rect key="frame" x="20" y="20" width="160" height="160"/>
+                                                </imageView>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="lRT-q7-V4e" firstAttribute="leading" secondItem="pIc-NT-foB" secondAttribute="leadingMargin" constant="12" id="M7b-gd-BiU"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="lRT-q7-V4e" secondAttribute="bottom" constant="12" id="RIQ-F3-2Nz"/>
                                             <constraint firstItem="L1G-QY-KtV" firstAttribute="centerY" secondItem="pIc-NT-foB" secondAttribute="centerY" id="Szi-Hm-ORy"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="lRT-q7-V4e" secondAttribute="trailing" constant="12" id="ojW-Bf-Ngo"/>
                                             <constraint firstItem="L1G-QY-KtV" firstAttribute="centerX" secondItem="pIc-NT-foB" secondAttribute="centerX" id="tuk-rn-h7y"/>
+                                            <constraint firstItem="lRT-q7-V4e" firstAttribute="top" secondItem="pIc-NT-foB" secondAttribute="topMargin" constant="12" id="ztx-eB-pNt"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="name" destination="L1G-QY-KtV" id="88m-jc-UtE"/>
+                                            <outlet property="logoImageView" destination="lRT-q7-V4e" id="Uzq-pG-1aA"/>
+                                            <outlet property="nameLabel" destination="L1G-QY-KtV" id="gIt-ps-xnB"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -153,9 +162,9 @@
                                             <segment title="WEEKLY"/>
                                             <segment title="MONTHLY"/>
                                         </segments>
-                                        <color key="tintColor" red="0.25882352939999997" green="0.46274509800000002" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.12549019610000001" green="0.60784313729999995" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="timeSeriesSegmentedControlChanged:" destination="erA-Ig-qYu" eventType="valueChanged" id="Wel-Av-ZR8"/>
+                                            <action selector="timeSeriesSegmentedControlChanged:" destination="erA-Ig-qYu" eventType="valueChanged" id="bJ9-il-aUH"/>
                                         </connections>
                                     </segmentedControl>
                                 </subviews>
@@ -171,7 +180,21 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dhZ-aT-uPf">
                                         <rect key="frame" x="5" y="5" width="365" height="258"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="An unexpected error has occurred. Try again later." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uDc-k4-Y1A">
+                                                <rect key="frame" x="30" y="108" width="305" height="43"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
+                                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="uDc-k4-Y1A" secondAttribute="bottom" constant="107" id="Co4-gn-RfP"/>
+                                            <constraint firstItem="uDc-k4-Y1A" firstAttribute="top" secondItem="dhZ-aT-uPf" secondAttribute="top" constant="108" id="RWT-oc-JLI"/>
+                                            <constraint firstAttribute="trailing" secondItem="uDc-k4-Y1A" secondAttribute="trailing" constant="30" id="hIq-RC-EeK"/>
+                                            <constraint firstItem="uDc-k4-Y1A" firstAttribute="leading" secondItem="dhZ-aT-uPf" secondAttribute="leading" constant="30" id="kCr-rU-M5E"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -188,12 +211,12 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wr6-vv-VnH">
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
-                                <color key="backgroundColor" red="0.25882352941176467" green="0.46274509803921571" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.12549019610000001" green="0.60784313729999995" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="vEo-fQ-P1G"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="tintColor" red="0.25882352941176467" green="0.46274509803921571" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.12549019610000001" green="0.60784313729999995" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="NOTIFY ME">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -231,6 +254,7 @@
                         <outlet property="chartView" destination="dhZ-aT-uPf" id="qMj-ao-kWS"/>
                         <outlet property="closeValueLabel" destination="6p5-jv-Hew" id="ZWv-ou-fqJ"/>
                         <outlet property="dataView" destination="2Cs-gh-2JV" id="ZhS-ck-63b"/>
+                        <outlet property="messageLabel" destination="uDc-k4-Y1A" id="Y8A-qi-ybC"/>
                         <outlet property="notifymeButton" destination="Wr6-vv-VnH" id="IOU-5U-hZP"/>
                         <outlet property="symbolNameLabel" destination="mwR-93-RAR" id="9XY-AO-di9"/>
                         <outlet property="timeSeriesSegmentedControl" destination="pma-M2-nch" id="iOV-Pu-QfU"/>
@@ -238,7 +262,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pn9-v8-awa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2225" y="-371"/>
+            <point key="canvasLocation" x="2224.8000000000002" y="-371.06446776611699"/>
         </scene>
         <!--Profile-->
         <scene sceneID="PhF-ML-D4R">
@@ -265,6 +289,8 @@
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.12549019610000001" green="0.60784313729999995" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="bkL-Cc-dhv" kind="relationship" relationship="viewControllers" id="vYj-ee-dEx"/>
@@ -285,6 +311,17 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SpU-fC-76d">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.12549019610000001" green="0.60784313729999995" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.12549019610000001" green="0.60784313729999995" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -304,6 +341,16 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ce3-Ac-AGi">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.12549019610000001" green="0.60784313729999995" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

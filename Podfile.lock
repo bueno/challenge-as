@@ -1,20 +1,16 @@
 PODS:
-  - ModelMapper (7.0.0)
   - SwiftCharts (0.6.1)
 
 DEPENDENCIES:
-  - ModelMapper (= 7.0)
   - SwiftCharts
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - ModelMapper
     - SwiftCharts
 
 SPEC CHECKSUMS:
-  ModelMapper: 73a3e79c9f02af80190115acc15aa8dcd199e9d0
   SwiftCharts: 77378d6cf667e95f9c79a745b6778e66eed5339c
 
-PODFILE CHECKSUM: e0ad72eaf288e9b8a8a669766491a1e95a79d050
+PODFILE CHECKSUM: 6ec31e0ae64023cb63ef8e7a2f10281df8b82037
 
 COCOAPODS: 1.5.2

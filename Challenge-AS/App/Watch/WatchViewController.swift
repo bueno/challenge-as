@@ -54,6 +54,14 @@ extension WatchViewController: UICollectionViewDelegate, UICollectionViewDataSou
             label.text = symbol.id
         }
         
+        if let logo = cell.viewWithTag(101) as? UIImageView {
+            
+            let symbol = symbolCollection[indexPath.row]
+            logo.image = UIImage(named: symbol.logo)
+            
+//            logo.image = UIImage(named name: symbol.logo)
+        }
+        
         return cell
     }
     

@@ -11,4 +11,5 @@ import Foundation
 struct Symbol {
     var id: String
     var name: String
+    var logo: String
 }
