@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3hf-dF-YUH">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yrc-E8-76y" customClass="SpinnerView" customModule="Challenge_AS" customModuleProvider="target">
+                            <rect key="frame" x="157" y="303" width="60" height="60"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <gestureRecognizers/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="numSegments">
+                                    <integer key="value" value="16"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                    <color key="value" red="0.0" green="0.70588235294117641" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                    <integer key="value" value="6"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="yrc-E8-76y" firstAttribute="leading" secondItem="3hf-dF-YUH" secondAttribute="leading" constant="157" id="4Pg-8c-R5x"/>
+                        <constraint firstItem="yrc-E8-76y" firstAttribute="top" secondItem="3hf-dF-YUH" secondAttribute="top" constant="303" id="8aA-4Z-PTy"/>
+                        <constraint firstItem="yrc-E8-76y" firstAttribute="centerX" secondItem="3hf-dF-YUH" secondAttribute="centerX" id="EXt-Wx-q2x"/>
+                        <constraint firstItem="yrc-E8-76y" firstAttribute="centerY" secondItem="3hf-dF-YUH" secondAttribute="centerY" id="Xex-bg-o1z"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="3hf-dF-YUH" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="PF4-0F-otu"/>
+                <constraint firstItem="3hf-dF-YUH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="V4N-aw-eOq"/>
+                <constraint firstAttribute="trailing" secondItem="3hf-dF-YUH" secondAttribute="trailing" id="VCU-bV-pq6"/>
+                <constraint firstItem="3hf-dF-YUH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Wlr-9F-UV8"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+    </objects>
+</document>
