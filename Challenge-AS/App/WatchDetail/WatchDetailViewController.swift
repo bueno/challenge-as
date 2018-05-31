@@ -18,7 +18,6 @@ class WatchDetailViewController: BaseViewController {
     @IBOutlet private weak var symbolNameLabel: UILabel!
     @IBOutlet private weak var closeValueLabel: UILabel!
     @IBOutlet private weak var timeSeriesSegmentedControl: UISegmentedControl!
-    @IBOutlet private weak var notifymeButton: UIButton!
     
     
     //MARK: Private Properties
@@ -55,17 +54,7 @@ class WatchDetailViewController: BaseViewController {
         self.removeCurrentViewController()
         loadStockData()
     }
-    
-    @IBAction func notifymeButtonPressed(_ sender: Any) {
-        if (notifymeIsEnabled) {
-            notifymeButton.setTitle("NOTIFY ME", for: UIControlState.normal)
-            notifymeIsEnabled = false
-        } else {
-            notifymeButton.setTitle("DISABLE NOTIFY ME", for: UIControlState.normal)
-            notifymeIsEnabled = true
-        }
-    }
-    
+
     
     //MARK: Private Methods
     
@@ -88,10 +77,8 @@ class WatchDetailViewController: BaseViewController {
                 self.prepareData(stock: stock)
                 LoadingView.shared.dismissLoading()
             case .failure(let error):
-                //TODO: Localization
-                let message = "An unexpected error has occurred. Try again later."
-                self.showAlert(message: message)
-                self.messageLabel.text = message
+                self.showAlert(message: "AN_UNEXPECTED_ERROR".localized)
+                self.messageLabel.text = "AN_UNEXPECTED_ERROR".localized
                 self.messageLabel.isHidden = false
                 LoadingView.shared.dismissLoading()
             }
@@ -125,10 +112,8 @@ class WatchDetailViewController: BaseViewController {
             if let date = f?.date {
                 oneDayString = Utils.getDateFromDate(text: date)
             } else {
-                //TODO: Localization
-                let message = "An unexpected error has occurred. Try again later."
-                self.showAlert(message: message)
-                self.messageLabel.text = message
+                self.showAlert(message: "AN_UNEXPECTED_ERROR".localized)
+                self.messageLabel.text = "AN_UNEXPECTED_ERROR".localized
                 self.messageLabel.isHidden = false
                 return
             }
@@ -179,17 +164,13 @@ class WatchDetailViewController: BaseViewController {
                 self.dataView.setup(item: (f?.value.item)!)
                 
             } else {
-                //TODO: Localization
-                let message = "An unexpected error has occurred. Try again later."
-                self.showAlert(message: message)
-                self.messageLabel.text = message
+                self.showAlert(message: "AN_UNEXPECTED_ERROR".localized)
+                self.messageLabel.text = "AN_UNEXPECTED_ERROR".localized
                 self.messageLabel.isHidden = false
             }
         } else {
-            //TODO: Localization
-            let message = "An unexpected error has occurred. Try again later."
-            self.showAlert(message: message)
-            self.messageLabel.text = message
+            self.showAlert(message: "AN_UNEXPECTED_ERROR".localized)
+            self.messageLabel.text = "AN_UNEXPECTED_ERROR".localized
             self.messageLabel.isHidden = false
         }
     }

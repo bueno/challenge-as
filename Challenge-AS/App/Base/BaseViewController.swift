@@ -19,9 +19,8 @@ class BaseViewController: UIViewController {
     }
     
     func showAlert(message: String) {
-        //TODO: Localization
-        let alert = UIAlertController(title: "Oops!", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        let alert = UIAlertController(title: "OOPS".localized, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK".localized, style: .default, handler: nil))
         self.present(alert, animated: true)
     }
 }
