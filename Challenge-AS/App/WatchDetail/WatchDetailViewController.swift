@@ -88,8 +88,11 @@ class WatchDetailViewController: BaseViewController {
                 self.prepareData(stock: stock)
                 LoadingView.shared.dismissLoading()
             case .failure(let error):
-                print(error)
-                self.showAlert()
+                //TODO: Localization
+                let message = "An unexpected error has occurred. Try again later."
+                self.showAlert(message: message)
+                self.messageLabel.text = message
+                self.messageLabel.isHidden = false
                 LoadingView.shared.dismissLoading()
             }
         }
@@ -118,10 +121,17 @@ class WatchDetailViewController: BaseViewController {
             }
             
             let f = itemsSortedByDate.first
-            let oneDay = String(describing: f?.date)
-            print("Date: \(oneDay)")
-            //TODO: Pegar a data correta
-            let oneDayString = "2018-05-25"
+            var oneDayString = ""
+            if let date = f?.date {
+                oneDayString = Utils.getDateFromDate(text: date)
+            } else {
+                //TODO: Localization
+                let message = "An unexpected error has occurred. Try again later."
+                self.showAlert(message: message)
+                self.messageLabel.text = message
+                self.messageLabel.isHidden = false
+                return
+            }
             
             //Items filtered
             var itemsFiltered = chartItems.filter { $0.date.contains(oneDayString)  }
@@ -142,7 +152,7 @@ class WatchDetailViewController: BaseViewController {
                 newNumber=newNumber-1
                 
                 let val = String(format: "%.02f", (itemBase.value.text as NSString).doubleValue)
-                let dat = self.getTimeFromDate(text: itemBase.date)
+                let dat = Utils.getTimeFromDate(text: itemBase.date)
                 
                 let newValue = ChartValue(number: newNumber, text: val, item: itemBase.value.item)
                 let newItem = ChartItem(date: dat, value: newValue)
@@ -155,7 +165,7 @@ class WatchDetailViewController: BaseViewController {
                 newNumber=newNumber-1
                 
                 let val = String(format: "%.02f", (itemBase.value.text as NSString).doubleValue)
-                let dat = self.getTimeFromDate(text: itemBase.date)
+                let dat = Utils.getTimeFromDate(text: itemBase.date)
                 
                 let newValue = ChartValue(number: newNumber, text: val, item: itemBase.value.item)
                 let newItem = ChartItem(date: dat , value: newValue)
@@ -169,10 +179,18 @@ class WatchDetailViewController: BaseViewController {
                 self.dataView.setup(item: (f?.value.item)!)
                 
             } else {
-                self.showAlert()
+                //TODO: Localization
+                let message = "An unexpected error has occurred. Try again later."
+                self.showAlert(message: message)
+                self.messageLabel.text = message
+                self.messageLabel.isHidden = false
             }
         } else {
-            self.showAlert()
+            //TODO: Localization
+            let message = "An unexpected error has occurred. Try again later."
+            self.showAlert(message: message)
+            self.messageLabel.text = message
+            self.messageLabel.isHidden = false
         }
     }
     
@@ -197,34 +215,4 @@ class WatchDetailViewController: BaseViewController {
         chartView.addSubview(controller.view)
         currentViewController = controller
     }
-    
-    //TODO: Colocar mensagem num controller centralizado
-    fileprivate func showAlert() {
-        //TODO: Localization
-        let message = "An unexpected error has occurred. Try again later."
-
-        let alert = UIAlertController(title: "Oops!", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-        self.present(alert, animated: true)
-        
-        self.messageLabel.text = message
-        self.messageLabel.isHidden = false
-    }
-    
-    //TODO: Criar um utils
-    fileprivate func formatterStringDate(_ date: String) -> String
-    {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss z"
-        let date = dateFormatter.date(from: date)
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        return  dateFormatter.string(from: date!)
-    }
-    
-    fileprivate func getTimeFromDate(text: String) -> String {
-        let indexStartOfText = text.index(text.startIndex, offsetBy: 11)
-        let indexEndOfText = text.index(text.endIndex, offsetBy: -3)
-        return String(text[indexStartOfText..<indexEndOfText])
-    }
-    
 }
