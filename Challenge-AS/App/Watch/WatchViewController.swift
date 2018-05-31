@@ -60,7 +60,7 @@ extension WatchViewController: UICollectionViewDelegate, UICollectionViewDataSou
         if Connectivity.isConnectedToInternet() {
             performSegue(withIdentifier: "watchSymbolDetail", sender: indexPath)
         } else {
-            showAlert(message: "INTERNET_CONNECTION_IS_NOT_AVAILABLE".localized)
+            showAlert(message: Constants.MESSAGE.INTERNET_CONNECTION_IS_NOT_AVAILABLE)
         }
         
     }

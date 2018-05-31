@@ -11,11 +11,16 @@ import UIKit
 struct ChartValue {
     var number: Int
     var text: String
-    var item: StockSerieItem
+    var item: StockSerieItem!
     
     init(number: Int, text: String, item: StockSerieItem) {
         self.number = number
         self.text = text
         self.item = item
+    }
+    
+    init(number: Int, text: String) {
+        self.number = number
+        self.text = text
     }
 }

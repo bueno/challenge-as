@@ -9,12 +9,12 @@
 import Foundation
 
 struct StockInfo: Codable {
-    let information: String
-    let symbol: String
-    let lastRefreshed: String
-    let interval: String
-    let outputSize: String
-    let timeZone: String
+    let information: String!
+    let symbol: String!
+    let lastRefreshed: String!
+    let interval: String!
+    let outputSize: String!
+    let timeZone: String!
 }
 
 extension StockInfo {

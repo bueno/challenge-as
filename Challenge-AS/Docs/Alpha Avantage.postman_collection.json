@@ -12,56 +12,10 @@
 			"description": "",
 			"item": [
 				{
-					"name": "TIME_SERIES_INTRADAY",
-					"request": {
-						"url": {
-							"raw": "{{apiURL}}/query?function=TIME_SERIES_INTRADAY&symbol=MSFT&interval=1min&apikey={{apiKEY}}",
-							"host": [
-								"{{apiURL}}"
-							],
-							"path": [
-								"query"
-							],
-							"query": [
-								{
-									"key": "function",
-									"value": "TIME_SERIES_INTRADAY",
-									"equals": true,
-									"description": ""
-								},
-								{
-									"key": "symbol",
-									"value": "MSFT",
-									"equals": true,
-									"description": ""
-								},
-								{
-									"key": "interval",
-									"value": "1min",
-									"equals": true,
-									"description": ""
-								},
-								{
-									"key": "apikey",
-									"value": "{{apiKEY}}",
-									"equals": true,
-									"description": ""
-								}
-							],
-							"variable": []
-						},
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"description": ""
-					},
-					"response": []
-				},
-				{
 					"name": "TIME_SERIES_DAILY",
 					"request": {
 						"url": {
-							"raw": "{{apiURL}}/query?function=TIME_SERIES_DAILY&symbol=MSFT&apikey={{apiKEY}}",
+							"raw": "{{apiURL}}/query?function=TIME_SERIES_DAILY&symbol=AAPL&apikey={{apiKEY}}",
 							"host": [
 								"{{apiURL}}"
 							],
@@ -77,7 +31,7 @@
 								},
 								{
 									"key": "symbol",
-									"value": "MSFT",
+									"value": "AAPL",
 									"equals": true,
 									"description": ""
 								},
@@ -101,7 +55,7 @@
 					"name": "TIME_SERIES_WEEKLY",
 					"request": {
 						"url": {
-							"raw": "{{apiURL}}/query?function=TIME_SERIES_WEEKLY&symbol=MSFT&apikey={{apiKEY}}",
+							"raw": "{{apiURL}}/query?function=TIME_SERIES_WEEKLY&symbol=AAPL&apikey={{apiKEY}}",
 							"host": [
 								"{{apiURL}}"
 							],
@@ -117,7 +71,7 @@
 								},
 								{
 									"key": "symbol",
-									"value": "MSFT",
+									"value": "AAPL",
 									"equals": true,
 									"description": ""
 								},
@@ -141,7 +95,7 @@
 					"name": "TIME_SERIES_MONTHLY",
 					"request": {
 						"url": {
-							"raw": "{{apiURL}}/query?function=TIME_SERIES_MONTHLY&symbol=MSFT&apikey={{apiKEY}}",
+							"raw": "{{apiURL}}/query?function=TIME_SERIES_MONTHLY&symbol=AAPL&apikey={{apiKEY}}",
 							"host": [
 								"{{apiURL}}"
 							],
@@ -157,7 +111,7 @@
 								},
 								{
 									"key": "symbol",
-									"value": "MSFT",
+									"value": "AAPL",
 									"equals": true,
 									"description": ""
 								},

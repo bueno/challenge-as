@@ -6,7 +6,7 @@
 //  Copyright © 2018 NxT. All rights reserved.
 //
 
-import  Eureka
+import Eureka
 
 class RegistrationViewController : FormViewController {
     

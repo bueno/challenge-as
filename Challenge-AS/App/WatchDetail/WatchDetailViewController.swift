@@ -7,18 +7,18 @@
 //
 
 import UIKit
+import Charts
 
 class WatchDetailViewController: BaseViewController {
     
     //MARK: IBOutlets
     
     @IBOutlet weak var dataView: WatchDetailDataView!
-    @IBOutlet private weak var chartView: UIView!
-    @IBOutlet private weak var messageLabel: UILabel!
+    @IBOutlet private weak var lineChartView: LineChartView!
     @IBOutlet private weak var symbolNameLabel: UILabel!
     @IBOutlet private weak var closeValueLabel: UILabel!
     @IBOutlet private weak var timeSeriesSegmentedControl: UISegmentedControl!
-    
+
     
     //MARK: Private Properties
 
@@ -28,19 +28,22 @@ class WatchDetailViewController: BaseViewController {
     lazy private(set) var chartFrame: CGRect! = {
         CGRect(x: 0, y: 80, width: self.view.frame.size.width, height: self.view.frame.size.height - 80)
     }()
-    private var currentViewController: UIViewController?
+
+    weak var axisFormatDelegate: IAxisValueFormatter?
 
     
     //MARK: Life Cycle Methods
 
     override func viewDidLoad() {
-        super.viewDidLoad()        
+        super.viewDidLoad()
+        
+        axisFormatDelegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         loadHeaderData()
-        loadStockData()
+        loadStockData(option: 0)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -52,10 +55,12 @@ class WatchDetailViewController: BaseViewController {
     
     @IBAction func timeSeriesSegmentedControlChanged(_ sender: Any) {
         if Connectivity.isConnectedToInternet() {
-            self.removeCurrentViewController()
-            loadStockData()
+            self.dataView.clear()
+
+            let obj = sender as! UISegmentedControl
+            loadStockData(option: obj.selectedSegmentIndex)
         } else {
-            showAlert(message: "INTERNET_CONNECTION_IS_NOT_AVAILABLE".localized)
+            showAlert(message: Constants.MESSAGE.INTERNET_CONNECTION_IS_NOT_AVAILABLE)
         }
     }
 
@@ -67,137 +72,128 @@ class WatchDetailViewController: BaseViewController {
         self.symbolNameLabel.text = symbol?.name
     }
     
-    fileprivate func loadStockData() {
+    fileprivate func loadStockData(option : Int) {
         
-        self.messageLabel.isHidden = true;
         LoadingView.shared.showLoading()
         
-        let symbol = self.symbol?.id
-        let interval = AlphaVantage.Interval.m60.rawValue
-        
-        StockAPI.getStockTimeSeriesIntraday(symbol: symbol!, interval: interval) { (result) in
+        switch option {
+        case 0:
+            self.loadDaily(symbol: (self.symbol?.id)!)
+        case 1:
+            self.loadWeekly(symbol: (self.symbol?.id)!)
+        case 2:
+            self.loadMonthly(symbol: (self.symbol?.id)!)
+        default:
+            self.loadDaily(symbol: (self.symbol?.id)!)
+        }
+    }
+    
+    fileprivate func loadDaily(symbol: String) {
+        StockAPI.getStockTimeSeriesDaily(symbol: symbol) { (result) in
             switch result {
             case .success(let stock):
-                self.prepareData(stock: stock)
+                self.updateChart(stock: stock.item)
                 LoadingView.shared.dismissLoading()
             case .failure(let error):
-                self.showAlert(message: "AN_UNEXPECTED_ERROR".localized)
-                self.messageLabel.text = "AN_UNEXPECTED_ERROR".localized
-                self.messageLabel.isHidden = false
+                print(error.localizedDescription)
+                self.showAlert(message: Constants.MESSAGE.AN_UNEXPECTED_ERROR)
                 LoadingView.shared.dismissLoading()
             }
         }
     }
     
-    fileprivate func prepareData(stock: StockMetaData) {
-        let array = Array(stock.item)
+    fileprivate func loadWeekly(symbol: String) {
+        StockAPI.getStockTimeSeriesWeekly(symbol: symbol) { (result) in
+            switch result {
+            case .success(let stock):
+                self.updateChart(stock: stock.item)
+                LoadingView.shared.dismissLoading()
+            case .failure(let error):
+                print(error.localizedDescription)
+                self.showAlert(message: Constants.MESSAGE.AN_UNEXPECTED_ERROR)
+                LoadingView.shared.dismissLoading()
+            }
+        }
+    }
+    
+    fileprivate func loadMonthly(symbol: String) {
+        StockAPI.getStockTimeSeriesMonthly(symbol: symbol) { (result) in
+            switch result {
+            case .success(let stock):
+                self.updateChart(stock: stock.item)
+                LoadingView.shared.dismissLoading()
+            case .failure(let error):
+                print(error.localizedDescription)
+                self.showAlert(message: Constants.MESSAGE.AN_UNEXPECTED_ERROR)
+                LoadingView.shared.dismissLoading()
+            }
+        }
+    }
+    
+    fileprivate func updateChart(stock: [String:StockSerieItem]) {
+        let array = Array(stock)
         if array.count > 0 {
             
-            var chartItems: [ChartItem] = []
+            let chartItems: [ChartItem] = formatChartItems(stock: stock)
             
-            var i = array.count
-            for item in array {
-                i=i-1
-                let newValue = ChartValue(number: i, text: item.value.close, item: item.value)
-                let newItem = ChartItem(date: item.key, value: newValue)
-                chartItems.append(newItem)
+            var lineChartEntry  = [ChartDataEntry]()
+            for i in 0..<chartItems.count {
                 
-                print("Item: \(i) => Key: \(item.key) => Value: \(item.value.close)")
+                let value: Double = Double(chartItems[i].value.text)!
+                
+                let date = Utils.convertStringToDate(date: chartItems[i].date, format: "yy-MM-dd")
+                let timeIntervalForDate: TimeInterval = date.timeIntervalSince1970
+
+                let entry = ChartDataEntry(x: Double(timeIntervalForDate), y: Double(value))
+                lineChartEntry.append(entry)
             }
             
-            //Sorted all items by date for future filter by one day
-            var itemsSortedByDate = chartItems
-            itemsSortedByDate.sort {
-                return $0.date > $1.date
-            }
+            let lineClose = LineChartDataSet(values: lineChartEntry, label: Constants.LABEL.CLOSE)
+            lineClose.colors = [NSUIColor.blue]
             
-            let f = itemsSortedByDate.first
-            var oneDayString = ""
-            if let date = f?.date {
-                oneDayString = Utils.getDateFromDate(text: date)
-            } else {
-                self.showAlert(message: "AN_UNEXPECTED_ERROR".localized)
-                self.messageLabel.text = "AN_UNEXPECTED_ERROR".localized
-                self.messageLabel.isHidden = false
-                return
-            }
+            let data = LineChartData()
+            data.addDataSet(lineClose)
             
-            //Items filtered
-            var itemsFiltered = chartItems.filter { $0.date.contains(oneDayString)  }
-            itemsFiltered.sort {
-                return $0.date < $1.date
-            }
+            lineChartView.data = data
+            lineChartView.chartDescription?.text = symbol?.id
             
-            //Items filtered Sorted (Close value)
-            var itemsSortedFiltered = itemsSortedByDate.filter { $0.date.contains(oneDayString)  }
-            itemsSortedFiltered.sort {
-                return $0.value.item.close < $1.value.item.close
-            }
+            let xaxis = lineChartView.xAxis
+            xaxis.valueFormatter = axisFormatDelegate
             
-            var newNumber: Int = itemsSortedFiltered.count
-            var newChartItemsFiltered: [ChartItem] = []
-            for itemBase in itemsFiltered {
-                
-                newNumber=newNumber-1
-                
-                let val = String(format: "%.02f", (itemBase.value.text as NSString).doubleValue)
-                let dat = Utils.getTimeFromDate(text: itemBase.date)
-                
-                let newValue = ChartValue(number: newNumber, text: val, item: itemBase.value.item)
-                let newItem = ChartItem(date: dat, value: newValue)
-                newChartItemsFiltered.append(newItem)
-            }
+            let f = chartItems.last
+            self.closeValueLabel.text = String(format: "%.02f", ((f?.value.item.close)! as NSString).doubleValue)
+            self.dataView.setup(item: (f?.value.item)!)
             
-            newNumber = itemsSortedFiltered.count
-            var newChartItemsSorteredFiltered: [ChartItem] = []
-            for itemBase in itemsSortedFiltered {
-                newNumber=newNumber-1
-                
-                let val = String(format: "%.02f", (itemBase.value.text as NSString).doubleValue)
-                let dat = Utils.getTimeFromDate(text: itemBase.date)
-                
-                let newValue = ChartValue(number: newNumber, text: val, item: itemBase.value.item)
-                let newItem = ChartItem(date: dat , value: newValue)
-                newChartItemsSorteredFiltered.append(newItem)
-            }
-            
-            if (newChartItemsFiltered.count > 0) {
-                self.showChartViewController(controller: CubicLinesViewController(), items: newChartItemsFiltered, itemsSorted: newChartItemsSorteredFiltered)
-                
-                self.closeValueLabel.text = String(format: "%.02f", (f?.value.item.close as! NSString).doubleValue)
-                self.dataView.setup(item: (f?.value.item)!)
-                
-            } else {
-                self.showAlert(message: "AN_UNEXPECTED_ERROR".localized)
-                self.messageLabel.text = "AN_UNEXPECTED_ERROR".localized
-                self.messageLabel.isHidden = false
-            }
         } else {
-            self.showAlert(message: "AN_UNEXPECTED_ERROR".localized)
-            self.messageLabel.text = "AN_UNEXPECTED_ERROR".localized
-            self.messageLabel.isHidden = false
+            self.showAlert(message: Constants.MESSAGE.AN_UNEXPECTED_ERROR)
         }
     }
     
-    fileprivate func removeCurrentViewController() {
-        if let currentViewController = currentViewController {
-            currentViewController.removeFromParentViewController()
-            currentViewController.view.removeFromSuperview()
+    fileprivate func formatChartItems(stock: [String:StockSerieItem]) -> [ChartItem] {
+        var chartItems: [ChartItem] = []
+        let array = Array(stock)
+        
+        var arraySortedByDate = array
+        arraySortedByDate.sort {
+            return $0.key < $1.key
         }
-        self.dataView.clear()
+        let arraySortedByDateFiltered = arraySortedByDate.suffix(5)
+        
+        var i = arraySortedByDateFiltered.count
+        for item in arraySortedByDateFiltered {
+            i=i-1
+            let newValue = ChartValue(number: i, text: item.value.close, item: item.value)
+            let newItem = ChartItem(date: item.key, value: newValue)
+            chartItems.append(newItem)
+        }
+        return chartItems
     }
-    
-    fileprivate func showChartViewController(controller: ChartBaseViewController, items: [ChartItem], itemsSorted: [ChartItem]) {
-        
-        self.removeCurrentViewController()
-        controller.chartItems = items
-        controller.chartItemsSorted = itemsSorted
-        
-        let chartFrame = CGRect(x: 0, y: 0, width: 365, height: 253)
-        controller.chartFrame = chartFrame
-        
-        addChildViewController(controller)
-        chartView.addSubview(controller.view)
-        currentViewController = controller
+}
+
+extension WatchDetailViewController: IAxisValueFormatter {
+    func stringForValue(_ value: Double, axis: AxisBase?) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yy-MM-dd"
+        return dateFormatter.string(from: Date(timeIntervalSince1970: value))
     }
 }

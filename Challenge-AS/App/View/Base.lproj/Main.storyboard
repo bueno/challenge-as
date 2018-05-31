@@ -121,7 +121,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GjG-pl-wpi" userLabel="Header View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="1.000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6p5-jv-Hew">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6p5-jv-Hew">
                                         <rect key="frame" x="251" y="15" width="110" height="25"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -136,7 +136,6 @@
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pma-M2-nch">
                                         <rect key="frame" x="15" y="59" width="345" height="29"/>
                                         <segments>
-                                            <segment title="INTRADAY"/>
                                             <segment title="DAILY"/>
                                             <segment title="WEEKLY"/>
                                             <segment title="MONTHLY"/>
@@ -164,25 +163,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ZW-ic-vTc" userLabel="Content View">
                                 <rect key="frame" x="15" y="110" width="345" height="280"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dhZ-aT-uPf">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dhZ-aT-uPf" customClass="LineChartView" customModule="Charts">
                                         <rect key="frame" x="0.0" y="15" width="335" height="254"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="An unexpected error has occurred. Try again later." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uDc-k4-Y1A">
-                                                <rect key="frame" x="30" y="108" width="284" height="39"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="39" id="ipS-Mh-xHY"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
-                                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="uDc-k4-Y1A" firstAttribute="centerY" secondItem="dhZ-aT-uPf" secondAttribute="centerY" id="93U-Xo-pQK"/>
-                                            <constraint firstItem="uDc-k4-Y1A" firstAttribute="leading" secondItem="dhZ-aT-uPf" secondAttribute="leading" constant="30" id="Ism-Qa-Zvh"/>
-                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uDc-k4-Y1A" secondAttribute="trailing" id="Q17-yU-fto"/>
-                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -345,17 +328,16 @@
                     </view>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="chartView" destination="dhZ-aT-uPf" id="qMj-ao-kWS"/>
                         <outlet property="closeValueLabel" destination="6p5-jv-Hew" id="ZWv-ou-fqJ"/>
                         <outlet property="dataView" destination="2Cs-gh-2JV" id="ZhS-ck-63b"/>
-                        <outlet property="messageLabel" destination="uDc-k4-Y1A" id="Y8A-qi-ybC"/>
+                        <outlet property="lineChartView" destination="dhZ-aT-uPf" id="1a3-3W-Lar"/>
                         <outlet property="symbolNameLabel" destination="mwR-93-RAR" id="9XY-AO-di9"/>
                         <outlet property="timeSeriesSegmentedControl" destination="pma-M2-nch" id="iOV-Pu-QfU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pn9-v8-awa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2444" y="-371"/>
+            <point key="canvasLocation" x="2367" y="-371"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -392,7 +374,7 @@
         <scene sceneID="nVl-Fg-iU9">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="bkL-Cc-dhv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Watchlist" image="square-individual-nine-7" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Watchlist" image="watch" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="SpU-fC-76d">
@@ -423,7 +405,7 @@
         <scene sceneID="SLi-rJ-wXg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="r7f-NN-A6h" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Registration" image="write-simple-7" id="bsz-c6-xsV"/>
+                    <tabBarItem key="tabBarItem" title="Registration" image="registration" id="bsz-c6-xsV"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="ce3-Ac-AGi">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -486,7 +468,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="square-individual-nine-7" width="30" height="30"/>
-        <image name="write-simple-7" width="29" height="30"/>
+        <image name="registration" width="29" height="30"/>
+        <image name="watch" width="30" height="30"/>
     </resources>
 </document>

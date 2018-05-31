@@ -1,20 +1,22 @@
 PODS:
+  - Charts (3.1.1):
+    - Charts/Core (= 3.1.1)
+  - Charts/Core (3.1.1)
   - Eureka (4.1.1)
-  - SwiftCharts (0.6.1)
 
 DEPENDENCIES:
+  - Charts
   - Eureka
-  - SwiftCharts
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Charts
     - Eureka
-    - SwiftCharts
 
 SPEC CHECKSUMS:
+  Charts: 90a4d61da0f6e06684c591e3bcab11940fe61736
   Eureka: b88fb930e42c79f8c03c373d0fcdc28c1d6c50ed
-  SwiftCharts: 77378d6cf667e95f9c79a745b6778e66eed5339c
 
-PODFILE CHECKSUM: ccd2b03bd143f625437e1d10e73288548e1ff1b4
+PODFILE CHECKSUM: 780cc54e4d8c5411b5fb89d86bf9452498d014ab
 
 COCOAPODS: 1.5.2

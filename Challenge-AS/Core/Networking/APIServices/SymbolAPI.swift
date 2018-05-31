@@ -26,7 +26,7 @@ class SymbolAPI {
         data.append(Symbol(id: "DVMT", name: "Dell Technologies Inc", logo:"DVMT"))
         data.append(Symbol(id: "ACER", name: "Acer Therapeutics Inc", logo:"ACER"))
         data.append(Symbol(id: "EA", name: "Electronic Arts Inc.", logo:"EA"))
-        data.append(Symbol(id: "ATAR", name: "Atari Inc", logo:"ATAR"))
+        data.append(Symbol(id: "MSFT", name: "Microsoft Corporation", logo:"MSFT"))
         data.append(Symbol(id: "GOOGL", name: "Alphabet Inc Class A", logo:"GOOGL"))
         data.append(Symbol(id: "ORCL", name: "Oracle Corporation", logo:"ORCL"))
         data.append(Symbol(id: "UBI", name: "Ubisoft Entertainment SA", logo:"UBI"))

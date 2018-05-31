@@ -1,15 +1,15 @@
-/* 
-  Localizable.strings
-  Challenge-AS
-
-  Created by Luiz Henrique Bueno on 5/31/18.
-  Copyright © 2018 NxT. All rights reserved.
-*/
+/*
+ Localizable.strings
+ Challenge-AS
+ 
+ Created by Luiz Henrique Bueno on 5/31/18.
+ Copyright © 2018 NxT. All rights reserved.
+ */
 
 "ALERT" = "Alert!";
 "OOPS" = "Oops!";
 "OK" = "Ok";
 "AN_UNEXPECTED_ERROR" = "An unexpected error has occurred. Try again later.";
 "INTERNET_CONNECTION_IS_NOT_AVAILABLE" = "Internet connection is not available";
-
-
+"NO CHART DATA AVAILABLE" = "No chart data available";
+"CLOSE" = "Close";
