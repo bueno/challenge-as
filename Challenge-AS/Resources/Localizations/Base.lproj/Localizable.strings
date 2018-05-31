@@ -10,3 +10,4 @@
 "OOPS" = "Oops!";
 "OK" = "Ok";
 "AN_UNEXPECTED_ERROR" = "An unexpected error has occurred. Try again later.";
+"INTERNET_CONNECTION_IS_NOT_AVAILABLE" = "Internet connection is not available";

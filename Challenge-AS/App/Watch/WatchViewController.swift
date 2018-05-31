@@ -56,7 +56,13 @@ extension WatchViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "watchSymbolDetail", sender: indexPath)
+        
+        if Connectivity.isConnectedToInternet() {
+            performSegue(withIdentifier: "watchSymbolDetail", sender: indexPath)
+        } else {
+            showAlert(message: "INTERNET_CONNECTION_IS_NOT_AVAILABLE".localized)
+        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

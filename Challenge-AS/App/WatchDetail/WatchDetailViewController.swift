@@ -51,8 +51,12 @@ class WatchDetailViewController: BaseViewController {
     //MARK: Actions
     
     @IBAction func timeSeriesSegmentedControlChanged(_ sender: Any) {
-        self.removeCurrentViewController()
-        loadStockData()
+        if Connectivity.isConnectedToInternet() {
+            self.removeCurrentViewController()
+            loadStockData()
+        } else {
+            showAlert(message: "INTERNET_CONNECTION_IS_NOT_AVAILABLE".localized)
+        }
     }
 
     
