@@ -21,7 +21,7 @@
 		9139718020B5F39C00497E32 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9139717F20B5F39C00497E32 /* Symbol.swift */; };
 		9139719020B6044E00497E32 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9139718F20B6044E00497E32 /* BaseViewController.swift */; };
 		9139719520B6262E00497E32 /* WatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9139719420B6262E00497E32 /* WatchViewController.swift */; };
-		913971D520B63F8500497E32 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913971D320B63F8500497E32 /* ProfileViewController.swift */; };
+		913971D520B63F8500497E32 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913971D320B63F8500497E32 /* RegistrationViewController.swift */; };
 		913971DA20B65C9800497E32 /* WatchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913971D920B65C9800497E32 /* WatchCollectionViewCell.swift */; };
 		913971DC20B67DB200497E32 /* WatchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913971DB20B67DB200497E32 /* WatchDetailViewController.swift */; };
 		9148C05C20BC86AF006DA3C1 /* ChartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9148C05B20BC86AF006DA3C1 /* ChartItem.swift */; };
@@ -110,7 +110,7 @@
 		9139718F20B6044E00497E32 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		9139719220B6137400497E32 /* Alpha Avantage.postman_collection.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Alpha Avantage.postman_collection.json"; sourceTree = "<group>"; };
 		9139719420B6262E00497E32 /* WatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchViewController.swift; sourceTree = "<group>"; };
-		913971D320B63F8500497E32 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		913971D320B63F8500497E32 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		913971D920B65C9800497E32 /* WatchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchCollectionViewCell.swift; sourceTree = "<group>"; };
 		913971DB20B67DB200497E32 /* WatchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDetailViewController.swift; sourceTree = "<group>"; };
 		9148C05B20BC86AF006DA3C1 /* ChartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartItem.swift; sourceTree = "<group>"; };
@@ -365,7 +365,7 @@
 		91A3F59320B8C85800124D59 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				913971D320B63F8500497E32 /* ProfileViewController.swift */,
+				913971D320B63F8500497E32 /* RegistrationViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -593,10 +593,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Challenge-AS/Pods-Challenge-AS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftCharts/SwiftCharts.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftCharts.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -686,7 +688,7 @@
 				9139713220B5BF4C00497E32 /* AppDelegate.swift in Sources */,
 				9139719020B6044E00497E32 /* BaseViewController.swift in Sources */,
 				9148C06E20BCE13C006DA3C1 /* StockSerie.swift in Sources */,
-				913971D520B63F8500497E32 /* ProfileViewController.swift in Sources */,
+				913971D520B63F8500497E32 /* RegistrationViewController.swift in Sources */,
 				913971DA20B65C9800497E32 /* WatchCollectionViewCell.swift in Sources */,
 				9139716920B5DCF800497E32 /* APIEnvironments.swift in Sources */,
 				91A3F5A320B8F04500124D59 /* CubicLineViewController.swift in Sources */,

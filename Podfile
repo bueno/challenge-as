@@ -8,6 +8,7 @@ target 'Challenge-AS' do
   # Pods for Challenge-AS
 #  pod 'Alamofire', '~> 4.0'
   pod 'SwiftCharts'
+  pod 'Eureka'
 
   target 'Challenge-ASTests' do
     inherit! :search_paths
