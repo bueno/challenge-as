@@ -17,23 +17,6 @@ class WatchDetailDataView: UIView {
     @IBOutlet weak var lowLabel: UILabel!
     @IBOutlet weak var volumeLabel: UILabel!
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        commonInit()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        commonInit()
-    }
-    
-    private func commonInit() {
-        Bundle.main.loadNibNamed("WatchDetailDataView", owner: self, options: nil)
-        addSubview(contentView)
-        contentView.frame = self.bounds
-        contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-    }
-    
     func clear() {
         closeLabel.text = ""
         openLabel.text = ""
@@ -49,5 +32,4 @@ class WatchDetailDataView: UIView {
         lowLabel.text = String(format: "%.02f", (item.low as NSString).doubleValue)
         volumeLabel.text = item.volume
     }
-    
 }

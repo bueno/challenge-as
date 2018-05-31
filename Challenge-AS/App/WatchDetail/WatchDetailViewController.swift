@@ -35,9 +35,7 @@ class WatchDetailViewController: BaseViewController {
     //MARK: Life Cycle Methods
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.tabBarController?.tabBar.isHidden = true
+        super.viewDidLoad()        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,7 +46,6 @@ class WatchDetailViewController: BaseViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.tabBarController?.tabBar.isHidden = false
     }
     
     
@@ -123,6 +120,7 @@ class WatchDetailViewController: BaseViewController {
             let f = itemsSortedByDate.first
             let oneDay = String(describing: f?.date)
             print("Date: \(oneDay)")
+            //TODO: Pegar a data correta
             let oneDayString = "2018-05-25"
             
             //Items filtered

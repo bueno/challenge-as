@@ -37,8 +37,7 @@
 		91A3F5A620B9060300124D59 /* ChartDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A3F5A520B9060300124D59 /* ChartDefaults.swift */; };
 		91A3F5A820B9065600124D59 /* Devices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A3F5A720B9065600124D59 /* Devices.swift */; };
 		91C1C17020BC3A5F000BA6E6 /* WatchDetailDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C1C16F20BC3A5F000BA6E6 /* WatchDetailDataView.swift */; };
-		91C1C17320BC3AFC000BA6E6 /* WatchDetailDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91C1C17220BC3AFC000BA6E6 /* WatchDetailDataView.xib */; };
-		91C1C17620BC54B0000BA6E6 /* UIView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C1C17520BC54B0000BA6E6 /* UIView+Border.swift */; };
+		91C1C17620BC54B0000BA6E6 /* UIView+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C1C17520BC54B0000BA6E6 /* UIView+Custom.swift */; };
 		91C1C17D20BC6135000BA6E6 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C1C17C20BC6135000BA6E6 /* SpinnerView.swift */; };
 		91C1C18020BC6331000BA6E6 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C1C17F20BC6330000BA6E6 /* LoadingView.swift */; };
 		91C1C18220BC63C8000BA6E6 /* Application+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C1C18120BC63C8000BA6E6 /* Application+Navigation.swift */; };
@@ -127,8 +126,7 @@
 		91A3F5A520B9060300124D59 /* ChartDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDefaults.swift; sourceTree = "<group>"; };
 		91A3F5A720B9065600124D59 /* Devices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Devices.swift; sourceTree = "<group>"; };
 		91C1C16F20BC3A5F000BA6E6 /* WatchDetailDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDetailDataView.swift; sourceTree = "<group>"; };
-		91C1C17220BC3AFC000BA6E6 /* WatchDetailDataView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WatchDetailDataView.xib; sourceTree = "<group>"; };
-		91C1C17520BC54B0000BA6E6 /* UIView+Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Border.swift"; sourceTree = "<group>"; };
+		91C1C17520BC54B0000BA6E6 /* UIView+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Custom.swift"; sourceTree = "<group>"; };
 		91C1C17C20BC6135000BA6E6 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		91C1C17F20BC6330000BA6E6 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		91C1C18120BC63C8000BA6E6 /* Application+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Application+Navigation.swift"; sourceTree = "<group>"; };
@@ -398,7 +396,6 @@
 			children = (
 				913971DB20B67DB200497E32 /* WatchDetailViewController.swift */,
 				91C1C16F20BC3A5F000BA6E6 /* WatchDetailDataView.swift */,
-				91C1C17220BC3AFC000BA6E6 /* WatchDetailDataView.xib */,
 			);
 			path = WatchDetail;
 			sourceTree = "<group>";
@@ -406,7 +403,7 @@
 		91C1C17420BC5498000BA6E6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				91C1C17520BC54B0000BA6E6 /* UIView+Border.swift */,
+				91C1C17520BC54B0000BA6E6 /* UIView+Custom.swift */,
 				91C1C18120BC63C8000BA6E6 /* Application+Navigation.swift */,
 			);
 			path = Extensions;
@@ -565,7 +562,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9139713C20B5BF4D00497E32 /* LaunchScreen.storyboard in Resources */,
-				91C1C17320BC3AFC000BA6E6 /* WatchDetailDataView.xib in Resources */,
 				9139713920B5BF4D00497E32 /* Assets.xcassets in Resources */,
 				9139716520B5C59E00497E32 /* APISettings.plist in Resources */,
 				91C1C18420BC6461000BA6E6 /* LoadingView.xib in Resources */,
@@ -700,7 +696,7 @@
 				9139719520B6262E00497E32 /* WatchViewController.swift in Sources */,
 				9139717D20B5ED7E00497E32 /* ASError.swift in Sources */,
 				9148C05F20BC8D96006DA3C1 /* ChartBaseViewController.swift in Sources */,
-				91C1C17620BC54B0000BA6E6 /* UIView+Border.swift in Sources */,
+				91C1C17620BC54B0000BA6E6 /* UIView+Custom.swift in Sources */,
 				91C1C17D20BC6135000BA6E6 /* SpinnerView.swift in Sources */,
 				9148C07020BCE14F006DA3C1 /* StockSerieItem.swift in Sources */,
 				9148C06820BCDEAD006DA3C1 /* APIConfiguration.swift in Sources */,

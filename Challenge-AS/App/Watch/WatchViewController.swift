@@ -25,8 +25,6 @@ class WatchViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.isHidden = false
-
     }
     
     override func didReceiveMemoryWarning() {
@@ -34,7 +32,7 @@ class WatchViewController: BaseViewController {
     }
     
     func adjustCollectionViewLayout() {
-        let size = (view.frame.width - 30) / 2
+        let size = (view.frame.width - 50) / 3
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: size, height: size)
     }
@@ -48,18 +46,10 @@ extension WatchViewController: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WatchCollectionViewCell", for: indexPath)
-        if let label = cell.viewWithTag(100) as? UILabel {
-            
-            let symbol = symbolCollection[indexPath.row]
-            label.text = symbol.id
-        }
         
         if let logo = cell.viewWithTag(101) as? UIImageView {
-            
             let symbol = symbolCollection[indexPath.row]
             logo.image = UIImage(named: symbol.logo)
-            
-//            logo.image = UIImage(named name: symbol.logo)
         }
         
         return cell

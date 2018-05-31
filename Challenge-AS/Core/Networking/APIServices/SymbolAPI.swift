@@ -31,6 +31,10 @@ class SymbolAPI {
         data.append(Symbol(id: "ORCL", name: "Oracle Corporation", logo:"ORCL"))
         data.append(Symbol(id: "UBI", name: "Ubisoft Entertainment SA", logo:"UBI"))
         data.append(Symbol(id: "WMT", name: "Walmart Inc", logo:"WMT"))
+        //TODO: Colocar mais 3
+        data.append(Symbol(id: "ACER", name: "Acer Therapeutics Inc", logo:"ACER"))
+        data.append(Symbol(id: "HPQ", name: "HP Inc", logo:"HPQ"))
+        data.append(Symbol(id: "IBM", name: "IBM Common Stock", logo:"IBM"))
 
         return data
     }
