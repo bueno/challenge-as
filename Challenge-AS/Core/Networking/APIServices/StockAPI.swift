@@ -29,7 +29,7 @@ class StockAPI {
             return
         }
         
-        Alamofire.request(url).responseJSONDecodable { (response : DataResponse<StockDailyMetaData>) in
+        AF.request(url).responseDecodable { (response : DataResponse<StockDailyMetaData>) in
             completion(response.result)
         }
     }
@@ -52,7 +52,7 @@ class StockAPI {
             return
         }
         
-        Alamofire.request(url).responseJSONDecodable { (response : DataResponse<StockWeeklyMetaData>) in
+        AF.request(url).responseDecodable { (response : DataResponse<StockWeeklyMetaData>) in
             completion(response.result)
         }
     }
@@ -75,7 +75,7 @@ class StockAPI {
             return
         }
         
-        Alamofire.request(url).responseJSONDecodable { (response : DataResponse<StockMonthlyMetaData>) in
+        AF.request(url).responseDecodable { (response : DataResponse<StockMonthlyMetaData>) in
             completion(response.result)
         }
     }
